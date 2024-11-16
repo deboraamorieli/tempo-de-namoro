@@ -13,7 +13,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-y: auto; /* Permite rolagem vertical */
             position: relative;
         }
 
@@ -204,22 +204,21 @@
     <script>
         // Função para atualizar o contador de tempo
         function atualizarContador() {
-            const dataInicio = new Date('2024-10-11'); // Data do início do namoro
-            const agora = new Date();
-            const diff = agora - dataInicio;
+            const dataInicio = new Date('2023-01-01'); // Defina a data de início do relacionamento
+            const dataAgora = new Date();
+            const diff = new Date(dataAgora - dataInicio);
 
-            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutos = Math.floor((diff / (1000 * 60)) % 60);
-            const segundos = Math.floor((diff / 1000) % 60);
+            const anos = diff.getUTCFullYear() - 1970;
+            const meses = diff.getUTCMonth();
+            const dias = diff.getUTCDate() - 1;
 
-            document.getElementById('contador').innerText =
-                `${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+            document.getElementById('contador').textContent = 
+                `Estamos juntos há ${anos} anos, ${meses} meses e ${dias} dias.`;
         }
 
-        // Atualiza o contador a cada segundo
-        setInterval(atualizarContador, 1000);
-        atualizarContador();
+        // Atualiza o contador a cada 24 horas
+        setInterval(atualizarContador, 86400000);
+        atualizarContador(); // Chama imediatamente ao carregar a página
     </script>
 </body>
 </html>
