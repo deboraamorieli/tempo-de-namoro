@@ -3,70 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Tempo Juntos</title>
+    <title>Nosso Amor - Conexão Eterna</title>
     <style>
         /* Estilo para a página */
         body {
-            background-color: #000;
+            background-color: #2f2f2f;
             color: #fff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
             text-align: center;
             margin: 0;
             padding: 0;
         }
 
         h1 {
-            font-size: 36px;
-            color: #ff69b4;
-            margin-top: 30px;
+            font-size: 40px;
+            color: #ff6f61;
+            margin-top: 50px;
         }
 
         /* Imagem do casal */
         .foto-casal {
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             object-fit: cover;
+            border: 5px solid #fff;
             margin-top: 20px;
         }
 
         /* Estilo do contador */
         #contador {
-            font-size: 32px;
+            font-size: 40px;
             font-weight: bold;
             margin-top: 30px;
             color: #ffcc00;
+            transition: all 0.5s ease-in-out;
         }
 
         /* Texto de amor */
         .texto-amor {
-            font-size: 24px;
-            margin-top: 50px;
+            font-size: 28px;
+            margin-top: 40px;
             font-style: italic;
-            color: #ff1493;
+            color: #ffb6c1;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+            padding: 20px;
         }
 
-        /* Efeito suave de transição para o contador */
+        /* Efeito suave de transição */
         #contador {
             transition: all 0.5s ease-in-out;
+        }
+
+        /* Animação suave */
+        .fade-in {
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
     </style>
 </head>
 <body>
-    <h1>❤️ Nosso Tempo Juntos ❤️</h1>
+    <h1>❤️ Nosso Amor - Uma Conexão Eterna ❤️</h1>
 
     <!-- Imagem do casal -->
     <img src="sua-foto.jpg" alt="Foto do Casal" class="foto-casal" />
 
     <!-- Contador de tempo -->
-    <p id="contador"></p>
+    <p id="contador" class="fade-in"></p>
 
     <!-- Texto de amor -->
-    <p class="texto-amor">Cada dia ao seu lado é um presente, cada momento se torna eterno no meu coração. Te amo infinitamente!</p>
+    <p class="texto-amor fade-in">
+        Desde o momento em que nos encontramos, algo mais forte do que o tempo se conectou entre nós. 
+        Não se trata de contar os dias, mas sim de viver cada momento com a intensidade de uma eternidade. 
+        Nosso amor vai além dos números, ele se reflete nas pequenas coisas, no sorriso que compartilhamos, 
+        no toque que nos faz sentir completos, e na cumplicidade que transcende qualquer medida. 
+        A verdadeira beleza do que vivemos é que o tempo é apenas uma convenção, mas nossa conexão é eterna. 
+        Estamos entrelaçados não pelo relógio, mas pelo profundo entendimento que temos um do outro, 
+        pela força do nosso vínculo que só cresce a cada dia. O que importa é o sentimento, a essência de 
+        nossa união, e ela será infinita, não importa o que o tempo diga.
+    </p>
 
     <script>
         // Função para atualizar o contador de tempo
