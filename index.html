@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Amor - Conexão Eterna</title>
     <style>
-        /* Estilo para a página */
+        /* Estilo para a página com fundo preto */
         body {
-            background: linear-gradient(135deg, #FF6F61, #FFB6C1);
-            color: #fff;
+            background-color: #000; /* Cor de fundo preta */
+            color: #fff; /* Cor do texto em branco */
             font-family: 'Georgia', serif;
             text-align: center;
             margin: 0;
@@ -19,11 +19,11 @@
 
         h1 {
             font-size: 48px;
-            color: #fff;
+            color: #ff1493; /* Cor vibrante para o título */
             margin-top: 50px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            text-shadow: 0px 0px 20px rgba(255, 0, 150, 0.8); /* Brilho do título */
             font-family: 'Cursive', sans-serif;
-            animation: fadeIn 3s ease-out;
+            animation: fadeIn 3s ease-out, glow 1.5s infinite alternate; /* Efeito de fade e brilho */
         }
 
         /* Imagem do casal */
@@ -32,10 +32,10 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid #fff;
+            border: 6px solid #ff1493;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
             margin-top: 30px;
-            animation: bounce 2s infinite alternate;
+            animation: bounce 2s infinite alternate, fadeIn 3s ease-out;
         }
 
         /* Estilo do contador */
@@ -43,10 +43,10 @@
             font-size: 40px;
             font-weight: bold;
             margin-top: 30px;
-            color: #fff;
+            color: #ff1493;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             transition: all 0.5s ease-in-out;
-            animation: fadeIn 2s ease-out;
+            animation: fadeIn 2s ease-out, blink 1s step-end infinite; /* Efeito de piscando */
         }
 
         /* Texto de amor */
@@ -61,10 +61,10 @@
             line-height: 1.8;
             padding: 25px;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente para o texto */
             border-radius: 10px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 3s ease-out;
+            animation: fadeIn 3s ease-out, shine 2s infinite alternate;
         }
 
         /* Animação de corações flutuantes */
@@ -91,6 +91,33 @@
             }
         }
 
+        /* Efeito de brilho no título */
+        @keyframes glow {
+            0% {
+                text-shadow: 0px 0px 20px rgba(255, 0, 150, 0.8), 0px 0px 30px rgba(255, 0, 150, 0.6);
+            }
+            100% {
+                text-shadow: 0px 0px 30px rgba(255, 0, 150, 1), 0px 0px 60px rgba(255, 0, 150, 0.9);
+            }
+        }
+
+        /* Efeito de piscando no contador */
+        @keyframes blink {
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Efeito de brilho no texto */
+        @keyframes shine {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
         /* Efeito de Fade In */
         @keyframes fadeIn {
             0% { opacity: 0; }
@@ -102,6 +129,33 @@
             0% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0); }
+        }
+
+        /* Estrelas animadas de fundo */
+        .estrela {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        /* Efeito de brilho das estrelas */
+        @keyframes twinkle {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
         }
 
     </style>
@@ -139,6 +193,13 @@
     <div class="coracao" style="top: 40%; left: 60%;">❤️</div>
     <div class="coracao" style="top: 70%; left: 30%;">❤️</div>
     <div class="coracao" style="top: 80%; left: 50%;">❤️</div>
+
+    <!-- Estrelas animadas de fundo -->
+    <div class="estrela" style="top: 5%; left: 5%; animation-duration: 2s;"></div>
+    <div class="estrela" style="top: 20%; left: 40%; animation-duration: 3s;"></div>
+    <div class="estrela" style="top: 60%; left: 80%; animation-duration: 2.5s;"></div>
+    <div class="estrela" style="top: 80%; left: 25%; animation-duration: 1.5s;"></div>
+    <div class="estrela" style="top: 30%; left: 70%; animation-duration: 2.8s;"></div>
 
     <script>
         // Função para atualizar o contador de tempo
