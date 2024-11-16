@@ -7,18 +7,23 @@
     <style>
         /* Estilo para a página */
         body {
-            background-color: #2f2f2f;
+            background: linear-gradient(135deg, #FF6F61, #FFB6C1);
             color: #fff;
             font-family: 'Georgia', serif;
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow: hidden;
+            position: relative;
         }
 
         h1 {
-            font-size: 40px;
-            color: #ff6f61;
+            font-size: 48px;
+            color: #fff;
             margin-top: 50px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            font-family: 'Cursive', sans-serif;
+            animation: fadeIn 3s ease-out;
         }
 
         /* Imagem do casal */
@@ -27,8 +32,10 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #fff;
-            margin-top: 20px;
+            border: 6px solid #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+            margin-top: 30px;
+            animation: bounce 2s infinite alternate;
         }
 
         /* Estilo do contador */
@@ -36,60 +43,102 @@
             font-size: 40px;
             font-weight: bold;
             margin-top: 30px;
-            color: #ffcc00;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             transition: all 0.5s ease-in-out;
+            animation: fadeIn 2s ease-out;
         }
 
         /* Texto de amor */
         .texto-amor {
-            font-size: 28px;
+            font-size: 26px;
             margin-top: 40px;
             font-style: italic;
-            color: #ffb6c1;
-            max-width: 800px;
+            color: #FFF0F5;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
-            padding: 20px;
+            line-height: 1.8;
+            padding: 25px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 3s ease-out;
         }
 
-        /* Efeito suave de transição */
-        #contador {
-            transition: all 0.5s ease-in-out;
+        /* Animação de corações flutuantes */
+        .coracao {
+            position: absolute;
+            font-size: 40px;
+            color: #ff1493;
+            animation: heartFloat 4s ease-in-out infinite;
         }
 
-        /* Animação suave */
-        .fade-in {
-            animation: fadeIn 2s ease-out;
+        /* Efeito de animação de corações */
+        @keyframes heartFloat {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-200px) scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
         }
 
+        /* Efeito de Fade In */
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
 
+        /* Efeito de Bouncing da Imagem */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
-    <h1>❤️ Nosso Amor - Uma Conexão Eterna ❤️</h1>
+    <h1 class="fade-in">❤️ Nosso Amor - Uma Jornada Juntos ❤️</h1>
 
     <!-- Imagem do casal -->
-    <img src="sua-foto.jpg" alt="Foto do Casal" class="foto-casal" />
+    <img src="sua-foto.jpg" alt="Foto do Casal" class="foto-casal fade-in" />
 
     <!-- Contador de tempo -->
     <p id="contador" class="fade-in"></p>
 
     <!-- Texto de amor -->
     <p class="texto-amor fade-in">
-        Desde o momento em que nos encontramos, algo mais forte do que o tempo se conectou entre nós. 
-        Não se trata de contar os dias, mas sim de viver cada momento com a intensidade de uma eternidade. 
-        Nosso amor vai além dos números, ele se reflete nas pequenas coisas, no sorriso que compartilhamos, 
-        no toque que nos faz sentir completos, e na cumplicidade que transcende qualquer medida. 
-        A verdadeira beleza do que vivemos é que o tempo é apenas uma convenção, mas nossa conexão é eterna. 
-        Estamos entrelaçados não pelo relógio, mas pelo profundo entendimento que temos um do outro, 
-        pela força do nosso vínculo que só cresce a cada dia. O que importa é o sentimento, a essência de 
-        nossa união, e ela será infinita, não importa o que o tempo diga.
+        Cada passo ao seu lado me faz sentir a beleza de nossa conexão, que vai além dos dias, dos meses ou dos anos. 
+        Nosso amor não é apenas contado pelo relógio, mas pela profundidade dos momentos que compartilhamos, 
+        pela maneira como nossos corações batem em sintonia. Não importa onde a vida nos leve, estar ao seu lado 
+        é onde encontro minha verdadeira paz. 
+
+        Esta caminhada juntos é mais do que um destino, é uma jornada onde cada dia se torna especial, 
+        cada sorriso, cada olhar, cada gesto... todos são lembranças de um amor que cresce e se fortalece a cada instante.
+
+        Não se trata de contar o tempo, mas de celebrar a maravilhosa conexão que nos une, algo que transcende 
+        qualquer medida. Ao seu lado, o tempo para, o mundo desaparece, e tudo o que importa é o amor que 
+        compartilhamos, a felicidade de estar juntos e a promessa de viver cada momento com a intensidade de uma eternidade.
+
+        Te amo, e o que mais desejo é continuar essa caminhada com você, construindo juntos uma história que 
+        jamais será esquecida. Que nossa conexão dure por todas as vidas, onde quer que estejamos, 
+        pois nada se compara ao que vivemos, ao que somos, ao que sentimos. ❤️
     </p>
+
+    <!-- Corações flutuantes -->
+    <div class="coracao" style="top: 10%; left: 20%;">❤️</div>
+    <div class="coracao" style="top: 40%; left: 60%;">❤️</div>
+    <div class="coracao" style="top: 70%; left: 30%;">❤️</div>
+    <div class="coracao" style="top: 80%; left: 50%;">❤️</div>
 
     <script>
         // Função para atualizar o contador de tempo
