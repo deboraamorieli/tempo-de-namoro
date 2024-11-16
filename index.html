@@ -5,69 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Amor - Conexão Eterna</title>
     <style>
-        /* Estilo para a página com fundo preto */
+        /* Estilo geral */
         body {
-            background-color: #000; /* Cor de fundo preta */
-            color: #fff; /* Cor do texto em branco */
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
             font-family: 'Georgia', serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Permite rolagem vertical */
+            overflow-y: auto; /* Permitir rolagem */
             position: relative;
         }
 
         h1 {
             font-size: 48px;
-            color: #ff1493; /* Cor vibrante para o título */
+            color: #ff1493; /* Cor vibrante */
             margin-top: 50px;
-            text-shadow: 0px 0px 20px rgba(255, 0, 150, 0.8); /* Brilho do título */
-            font-family: 'Cursive', sans-serif;
-            animation: fadeIn 3s ease-out, glow 1.5s infinite alternate; /* Efeito de fade e brilho */
+            text-shadow: 0px 0px 20px rgba(255, 0, 150, 0.8);
+            animation: glow 1.5s infinite alternate;
         }
 
-        /* Imagem do casal */
         .foto-casal {
             width: 300px;
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid #ff1493;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
             margin-top: 30px;
-            animation: bounce 2s infinite alternate, fadeIn 3s ease-out;
+            animation: bounce 2s infinite alternate;
         }
 
-        /* Estilo do contador */
         #contador {
             font-size: 40px;
             font-weight: bold;
             margin-top: 30px;
             color: #ff1493;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            transition: all 0.5s ease-in-out;
-            animation: fadeIn 2s ease-out, blink 1s step-end infinite; /* Efeito de piscando */
         }
 
-        /* Texto de amor */
         .texto-amor {
-            font-size: 26px;
-            margin-top: 40px;
+            font-size: 20px;
+            margin: 40px auto;
             font-style: italic;
             color: #FFF0F5;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
             line-height: 1.8;
             padding: 25px;
-            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
-            background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente para o texto */
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro translúcido */
             border-radius: 10px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 3s ease-out, shine 2s infinite alternate;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
         }
 
-        /* Animação de corações flutuantes */
+        /* Corações flutuantes */
         .coracao {
             position: absolute;
             font-size: 40px;
@@ -75,7 +64,33 @@
             animation: heartFloat 4s ease-in-out infinite;
         }
 
-        /* Efeito de animação de corações */
+        /* Estrelas animadas de fundo */
+        .estrela {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        /* Efeitos de animação */
+        @keyframes glow {
+            0% {
+                text-shadow: 0px 0px 20px rgba(255, 0, 150, 0.8), 0px 0px 30px rgba(255, 0, 150, 0.6);
+            }
+            100% {
+                text-shadow: 0px 0px 30px rgba(255, 0, 150, 1), 0px 0px 60px rgba(255, 0, 150, 0.9);
+            }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
         @keyframes heartFloat {
             0% {
                 transform: translateY(0) scale(1);
@@ -91,58 +106,6 @@
             }
         }
 
-        /* Efeito de brilho no título */
-        @keyframes glow {
-            0% {
-                text-shadow: 0px 0px 20px rgba(255, 0, 150, 0.8), 0px 0px 30px rgba(255, 0, 150, 0.6);
-            }
-            100% {
-                text-shadow: 0px 0px 30px rgba(255, 0, 150, 1), 0px 0px 60px rgba(255, 0, 150, 0.9);
-            }
-        }
-
-        /* Efeito de piscando no contador */
-        @keyframes blink {
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        /* Efeito de brilho no texto */
-        @keyframes shine {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        /* Efeito de Fade In */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Efeito de Bouncing da Imagem */
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
-
-        /* Estrelas animadas de fundo */
-        .estrela {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background-color: #fff;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: twinkle 2s infinite ease-in-out;
-        }
-
-        /* Efeito de brilho das estrelas */
         @keyframes twinkle {
             0% {
                 transform: scale(1);
@@ -157,35 +120,23 @@
                 opacity: 0.8;
             }
         }
-
     </style>
 </head>
 <body>
-    <h1 class="fade-in">❤️ Nosso Amor - Uma Jornada Juntos ❤️</h1>
+    <h1>❤️ Nosso Amor - Uma Jornada Juntos ❤️</h1>
 
     <!-- Imagem do casal -->
-    <img src="sua-foto.jpg" alt="Foto do Casal" class="foto-casal fade-in" />
+    <img src="sua-foto.jpg" alt="Foto do Casal" class="foto-casal" />
 
     <!-- Contador de tempo -->
-    <p id="contador" class="fade-in"></p>
+    <p id="contador"></p>
 
     <!-- Texto de amor -->
-    <p class="texto-amor fade-in">
-        Cada passo ao seu lado me faz sentir a beleza de nossa conexão, que vai além dos dias, dos meses ou dos anos. 
-        Nosso amor não é apenas contado pelo relógio, mas pela profundidade dos momentos que compartilhamos, 
-        pela maneira como nossos corações batem em sintonia. Não importa onde a vida nos leve, estar ao seu lado 
-        é onde encontro minha verdadeira paz. 
-
-        Esta caminhada juntos é mais do que um destino, é uma jornada onde cada dia se torna especial, 
-        cada sorriso, cada olhar, cada gesto... todos são lembranças de um amor que cresce e se fortalece a cada instante.
-
-        Não se trata de contar o tempo, mas de celebrar a maravilhosa conexão que nos une, algo que transcende 
-        qualquer medida. Ao seu lado, o tempo para, o mundo desaparece, e tudo o que importa é o amor que 
-        compartilhamos, a felicidade de estar juntos e a promessa de viver cada momento com a intensidade de uma eternidade.
-
-        Te amo, e o que mais desejo é continuar essa caminhada com você, construindo juntos uma história que 
-        jamais será esquecida. Que nossa conexão dure por todas as vidas, onde quer que estejamos, 
-        pois nada se compara ao que vivemos, ao que somos, ao que sentimos. ❤️
+    <p class="texto-amor">
+        Cada momento ao seu lado é um lembrete da beleza da nossa conexão. Não se trata do tempo que passou,
+        mas da intensidade com que vivemos cada instante. Estar ao seu lado transforma dias comuns em
+        memórias extraordinárias. Que possamos continuar essa caminhada juntos, construindo uma história
+        inesquecível. Te amo hoje, amanhã e sempre! ❤️
     </p>
 
     <!-- Corações flutuantes -->
@@ -204,21 +155,22 @@
     <script>
         // Função para atualizar o contador de tempo
         function atualizarContador() {
-            const dataInicio = new Date('2024-10-11'); // Data do namoro: 11 de outubro de 2024
-            const dataAgora = new Date();
-            const diff = new Date(dataAgora - dataInicio);
+            const dataInicio = new Date('2024-10-11'); // Data inicial
+            const agora = new Date();
+            const diff = agora - dataInicio;
 
-            const anos = diff.getUTCFullYear() - 1970;
-            const meses = diff.getUTCMonth();
-            const dias = diff.getUTCDate() - 1;
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diff / (1000 * 60)) % 60);
+            const segundos = Math.floor((diff / 1000) % 60);
 
-            document.getElementById('contador').textContent = 
-                `Estamos juntos há ${anos} anos, ${meses} meses e ${dias} dias.`;
+            document.getElementById('contador').innerText =
+                `Estamos juntos há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
         }
 
-        // Atualiza o contador a cada 24 horas
-        setInterval(atualizarContador, 86400000);
-        atualizarContador(); // Chama imediatamente ao carregar a página
+        // Atualiza o contador a cada segundo
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
     </script>
 </body>
 </html>
